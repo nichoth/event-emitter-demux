@@ -1,7 +1,7 @@
 {
   "name": "event-emitter-demux",
   "version": "0.0.0",
-  "description": "Event bus with a tree structure",
+  "description": "Create an event emitter from a list of event types",
   "main": "index.js",
   "scripts": {
     "preversion": "eslint *.js && npm test",
