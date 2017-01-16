@@ -7,11 +7,14 @@
     "test": "node test/index.js | tap-spec"
   },
   "devDependencies": {
+    "eslint-config-minlint": "^2.0.0",
     "tap-spec": "^4.1.1",
     "tape": "^4.6.3"
   },
   "dependencies": {
-    "event-sinks": "^2.2.0"
+    "event-sinks": "^2.2.0",
+    "geval": "^2.2.0",
+    "xtend": "^4.0.1"
   },
   "repository": {
     "type": "git",
