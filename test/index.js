@@ -25,34 +25,34 @@ test('create event bus from array', function (t) {
 })
 
 
-// test('recursive nested busses', function (t) {
-//     t.plan(5)
-//     var evs = [
-//         'one',
-//         ['two', ['twoA', 'twoB']]
-//     ]
-//     var bus = Bus(evs)
-//     bus.on.one(function (ev) {
-//         t.equal(ev, 'eventOne', 'should emit event on top level')
-//     })
-//     var expected = [
-//         ['two', 'eventTwoA'],
-//         ['two', 'eventTwoB']
-//     ]
-//     var i = 0
-//     bus.on.two(function (ev) {
-//         t.deepEqual(ev, expected[i++], 'should namepsace the events')
-//     })
-//     bus.on.two.twoA(function (ev) {
-//         t.equal(ev, 'eventTwoA', 'should create nested emitter')
-//     })
-//     bus.on.two.twoB(function (ev) {
-//         t.equal(ev, 'eventTwoB', 'should create nested emitter')
-//     })
+test('recursive nested events', function (t) {
+    t.plan(3)
+    var evs = [
+        'one',
+        ['two', ['twoA', 'twoB']]
+    ]
+    var bus = Bus(evs)
+    bus.on.one(function (ev) {
+        t.equal(ev, 'eventOne', 'should emit event on top level')
+    })
+    // var expected = [
+    //     ['two', 'eventTwoA'],
+    //     ['two', 'eventTwoB']
+    // ]
+    // var i = 0
+    // bus.on.two(function (ev) {
+    //     t.deepEqual(ev, expected[i++], 'should namepsace the events')
+    // })
+    bus.on.two.twoA(function (ev) {
+        t.equal(ev, 'eventTwoA', 'should create nested emitter')
+    })
+    bus.on.two.twoB(function (ev) {
+        t.equal(ev, 'eventTwoB', 'should create nested emitter')
+    })
 
-//     bus.write.one('eventOne')
-//     bus.write.two.twoA('eventTwoA')
-//     bus.write.two.twoB('eventTwoB')
-// })
+    bus.write.one('eventOne')
+    bus.write.two.twoA('eventTwoA')
+    bus.write.two.twoB('eventTwoB')
+})
 
 
