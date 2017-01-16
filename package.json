@@ -1,6 +1,6 @@
 {
   "name": "event-emitter-demux",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Create an event emitter from a list of event types",
   "main": "index.js",
   "scripts": {
