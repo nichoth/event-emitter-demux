@@ -4,6 +4,8 @@
   "description": "Event bus with a tree structure",
   "main": "index.js",
   "scripts": {
+    "preversion": "eslint *.js && npm test",
+    "postversion": "git push && git push --tags && npm publish",
     "test": "node test/index.js | tap-spec"
   },
   "devDependencies": {
@@ -12,7 +14,6 @@
     "tape": "^4.6.3"
   },
   "dependencies": {
-    "event-sinks": "^2.2.0",
     "geval": "^2.2.0",
     "xtend": "^4.0.1"
   },
